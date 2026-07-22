@@ -4966,7 +4966,7 @@ function loadMap(i){
   traders.forEach(tr=>{const qs=m.quests.filter(q=>q.trader===tr);if(!qs.length)return;
     const h=document.createElement('div');h.className='trader-h';h.style.color=TC[tr]||'#bbb';
     h.innerHTML='<span class="caret">▾</span><span>'+tr+'</span><span class="cnt">'+qs.length+'</span>';
-    const group=document.createElement('div');group.className='trader-group';
+    const group=document.createElement('div');group.className='trader-group collapsed';h.classList.add('col');
     qs.forEach(qq=>{const d=document.createElement('div');d.className='quest';d.dataset.q=qq.code;
       let tags='';if(qq.key)tags+='<span class="keytag">🔑 '+qq.key+'</span>';if(qq.items)tags+='<span class="itemtag">'+qq.items+'</span>';
       d.innerHTML='<input type="checkbox" class="vis" checked><div class="badge" style="background:'+(TC[tr]||'#bbb')+'">'+qq.code+'</div><div><b>'+qq.name+'</b><div class="d">'+qq.desc+'</div>'+tags+'</div>';
